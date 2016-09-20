@@ -1,0 +1,351 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+        
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+
+
+
+  <div class="ui container">
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+       Event Handling
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-05">
+        Lab-05
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
+      <a class="item" data-tab="Solutions">
+        Solutions
+      </a>
+    
+    </div>
+</div>
+
+<br><br>
+
+  
+  <div  class="ui tab segment lab" data-tab="Lab-05">
+    <h1>Objectives</h1>
+<p>On completion of this lab you should be able to code animated drawings using the following constructs:</p>
+<ul>
+<li>mouse events</li>
+<li>key events</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Mouse events</h1>
+<ul>
+<li>In this step, we will implement the code examples 5.1 to 5.4 inclusive from your lectures.</li>
+</ul>
+<h2>Example 5.1</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_5_1</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() {
+   background(0);
+   stroke(255);
+   fill(128);
+   if (mousePressed){
+       rect(45,45,34,34); 
+   }
+   else{
+       ellipse(45,45,34,34);     
+   }
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 5.2</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_5_2</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() {
+  background(204);
+  if (mousePressed == true)    
+  {
+       fill(255); // white
+   } else {
+       fill(0);     // black
+   }
+   rect(25, 25, 50, 50);
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 5.3</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_5_3</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() { 
+   if (mousePressed){
+       if (mouseButton == LEFT) 
+            fill(0);      // black
+       else if (mouseButton == RIGHT)
+            fill(255);    // white
+   }        
+   else { 
+       fill(126);     // gray
+    }
+    rect(25, 25, 50, 50);
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 5.4</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_5_4</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(500,400);
+  background(0);
+}
+
+void draw() {
+
+  if (mousePressed) {
+    background(0);
+  }
+
+  stroke(255);
+  fill(45,45,45);
+  ellipse(mouseX, mouseY, 100, 100);
+}</code></pre>
+<ul>
+<li><p>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</p>
+</li>
+<li><p>Move the stroke and fill function calls from the draw method to the setup method.  Run your code.  Does it change the functionality of the program?  Why?</p>
+</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
+<ul>
+<li><p>For each exercise listed below, open a new sketchbook.</p>
+</li>
+<li><p>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
+</li>
+</ul>
+<h2>Exercise 1</h2>
+<ul>
+<li><p>Create a display window of 500x400, with a black background.</p>
+</li>
+<li><p>When the mouse is pressed, draw a red circle (100 pixel diameter) with a white outline.  Note:  when the mouse is pressed and dragged, multiple circles will be drawn.  When the mouse is released and dragged, no circles will be drawn.</p>
+</li>
+</ul>
+<h2>Exercise 2</h2>
+<ul>
+<li><p>Create a display window of 500x400, with a black background.</p>
+</li>
+<li><p>When the LEFT mouse button is pressed, draw a red circle (50 pixel diameter) with a white outline.  Note:  when this button is pressed and dragged, multiple circles will be drawn.</p>
+</li>
+<li><p>When the RIGHT mouse button is pressed, draw a blue square (length of 50 pixels) with a white outline.  Note:  when this button is pressed and dragged, multiple squares will be drawn.</p>
+</li>
+<li><p>When no button is pressed and the mouse is dragged, nothing is drawn.</p>
+</li>
+</ul>
+<h2>Challenge Exercise 1</h2>
+<ul>
+<li><p>Visit the <a href="https://processing.org/reference/">Processing website</a> and read up on the following keyEvents:</p>
+<ul>
+<li>keyPressed (boolean variable used to determine if a key was pressed).</li>
+<li>key (which stores a single alphanumeric character i.e. the most recently pressed key).</li>
+</ul>
+</li>
+<li><p>In a new sketch, draw a cirlce if the <strong>C</strong> key was pressed and a rectangle if any other key was pressed.  </p>
+</li>
+<li><p>Test your code...is the keyboard input case sensitive? Will both an upper case and a lower case <strong>c</strong> draw a circle?</p>
+</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="Solutions">
+    <h1>Solutions</h1>
+<ul>
+<li><p>The solutions for this lab can be found <a href="archives/lab05_solutions.zip">here</a>.  </p>
+</li>
+<li><p>The file is in Zip format, so when you download it, you will need to unzip it.  If you don&#39;t have unzipping software installed on your computer, <strong>7Zip</strong> is a good choice.</p>
+</li>
+</ul>
+
+  </div>
+ 
+
+
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+
+   </div>
+
+   
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Prepared by the Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) . Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>
+
+    <script>
+      
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+  $('.ui.embed').embed();
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+
+
+})
+
+
+    </script>
+
+  </body>
+ </html>

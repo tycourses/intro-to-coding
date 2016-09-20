@@ -1,0 +1,328 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+        
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+
+
+    </style>
+
+  </head>
+
+  <body>
+
+    
+
+
+
+  <div class="ui container">
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+       Animating your drawings
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-02">
+        Lab-02
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
+      <a class="item" data-tab="Solutions">
+        Solutions
+      </a>
+    
+    </div>
+</div>
+
+<br><br>
+
+  
+  <div  class="ui tab segment lab" data-tab="Lab-02">
+    <h1>Objectives</h1>
+<p>On completion of this lab you should:</p>
+<ul>
+<li>be able to write code to animate simple drawings.</li>
+<li>be aware of the system variables in the PDE and be able to use them effectively.</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Basic Animation</h1>
+<ul>
+<li>We will use the following built-in functions to animate our drawings:<ul>
+<li>setup()</li>
+<li>draw()</li>
+</ul>
+</li>
+</ul>
+<h2>A note on the setup() function</h2>
+<ul>
+<li>setup() is called once when the program starts and should not be called again.</li>
+<li>setup() can set the screen size and background colour. </li>
+<li>There can only be one setup() function for each sketch.</li>
+</ul>
+<h2>A note on the draw() function</h2>
+<ul>
+<li>You should never call the draw() function.</li>
+<li>Processing automatically calls the draw() function straight after the setup() call.</li>
+<li>draw() continuously executes the code contained inside it.</li>
+<li>There can only be one draw() function for each sketch.</li>
+</ul>
+<h2>Animating Ellipses</h2>
+<ul>
+<li><p>Open the Processing Development Environment (PDE).  </p>
+</li>
+<li><p>Enter the following code:</p>
+</li>
+</ul>
+<p><img src="./img/01.png" alt="Animating Ellipses"></p>
+<ul>
+<li><p>Using the <strong>File</strong>, <strong>Save as...</strong> menu options, save this sketchbook as <strong>lab02_step01</strong>.</p>
+</li>
+<li><p>Run the code.  You should have an animation similar to the screen shot below.</p>
+</li>
+</ul>
+<p><img src="./img/02.png" alt="Animating Ellipses - Multiple Circles"></p>
+<ul>
+<li>Can you explain why there are multiple circles drawn?  Why not just one circle? </li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="02">
+    <h2>Animating Ellipses (continued)</h2>
+<ul>
+<li><p>We are now going to change the code (from the previous step) so that only one circle is shown when you move the mouse.</p>
+</li>
+<li><p>Amend your code so that the background function is in the draw method instead of the setup method:</p>
+</li>
+</ul>
+<p><img src="./img/03.png" alt="Animating Ellipses - One Circle"></p>
+<ul>
+<li>Run the code.  You should have animation similar to the screen shot below.</li>
+</ul>
+<p><img src="./img/04.png" alt="Animating Ellipses - One Circle"></p>
+<ul>
+<li>Can you explain why there is only one circle drawn as we move our mouse? </li>
+</ul>
+<h2>Playing with the System Variables</h2>
+<ul>
+<li>What would happen to our animation if we swapped the <strong>mouseX</strong> and <strong>mouseY</strong> system variables in the <strong>ellipse</strong> function with each other?  Make this change (the code change is below, if you need it) and see if you can figure out what is going on.</li>
+</ul>
+<pre><code>    ellipse(mouseY, mouseX, 100, 100)</code></pre>
+<ul>
+<li>What would happen to our animation if we changed our ellipse function to be this:</li>
+</ul>
+<pre><code>    ellipse(width, mouseY, 100, 100)</code></pre>
+<ul>
+<li>Make this change and see if you can figure out what is going on.</li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
+<ul>
+<li><p>The exercises are typically based on the material we covered in the previous steps in this lab.</p>
+</li>
+<li><p>For each exercise listed below, open a new sketchbook.</p>
+</li>
+<li><p>For the <strong>challenge exercises</strong> you may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
+</li>
+</ul>
+<h2>Exercise 1</h2>
+<ul>
+<li>Produce the following animation:<ul>
+<li>a white circle is drawn when you move the mouse; only one circle is visible at one time (i.e. all previous ones are cleared).</li>
+<li>the x and y coordinates for the circle are dependent on the mouse position (hint: use system variables mouseX and mouseY).</li>
+<li>the size of the circle is determined by the y mouse coordinate.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>When you run your code, your circle show grow in size as you move your mouse pointer down the window and reduce in size when you move your mouse up the window.  When you move your mouse horizontally, the circle should stay the same size.</li>
+</ul>
+<h2>Exercise 2</h2>
+<ul>
+<li>Using exercise 1 as a starting point, add the following animation to it:<ul>
+<li>a black circle is drawn when you move the mouse (all previous black circles are cleared).</li>
+<li>the x coordinate for the circle is the mouseY coordinate and the y coordinate for the circle is mouseX.</li>
+<li>the size of the circle is determined by the x mouse coordinate.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>When you run your code, the black circle should overlap the white circle when you drag your mouse from (0,0) diagonally down to (100,100).  When you move your mouse horizontally, the black circle show grow/shrink in size.  It remains the same size when the mouse is dragged vertically.  Note that the white circle&#39;s behaviour hasn&#39;t changed.</li>
+</ul>
+<h2>Challenge Exercise 1 (animated drawing with no cursor)</h2>
+<ul>
+<li>Do some research to figure out how to turn the mouse pointer (cursor) off.</li>
+<li>Implement this functionality in any one of your exercises above.</li>
+</ul>
+<h2>Challenge Exercise 2 (animated drawing with a different cursor)</h2>
+<ul>
+<li>Do some research to figure out how to turn the mouse pointer (cursor) into a <em>hand</em>.</li>
+<li>Implement this functionality in any one of you exercises above.</li>
+</ul>
+<h2>Challenge Exercise 3 (animated drawing using a drag effect)</h2>
+<ul>
+<li>Do some research into the Processing variables:  pmousex and pmousey.</li>
+<li>Write a Processing sketch that uses these variables. </li>
+</ul>
+
+  </div>
+ 
+  <div  class="ui tab segment lab" data-tab="Solutions">
+    <h1>Solutions</h1>
+<ul>
+<li><p>The solutions for this lab can be found <a href="archives/lab02_solutions.zip">here</a>.  </p>
+</li>
+<li><p>The file is in Zip format, so when you download it, you will need to unzip it.  If you don&#39;t have unzipping software installed on your computer, <strong>7Zip</strong> is a good choice.</p>
+</li>
+</ul>
+
+  </div>
+ 
+
+
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+
+   </div>
+
+   
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Prepared by the Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) . Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>
+
+    <script>
+      
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+  $('.ui.embed').embed();
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+
+
+})
+
+
+    </script>
+
+  </body>
+ </html>
