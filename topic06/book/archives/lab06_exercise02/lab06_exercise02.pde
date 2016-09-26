@@ -3,20 +3,28 @@
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Chess board using the line method     //
-//                regardless of the size of the window  //
+//  Description:  Mouse Pressed Event                   //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
 //======================================================//
 
-size(600,400);
-background(150);
-  
-for (int i=1; i < 9; i++)
-{
-   //horizontal lines
-   line(0,i*(height/8), width, i*(height/8));
-   //vertical lines
-   line(i*(width/8),0,i*(width/8),height);
+void setup() {
+  size(500,400);
+  background(0);
+  stroke(255);
+}
+
+void draw() 
+{ 
+
+  if ((mousePressed) && (mouseButton == LEFT)){
+    fill(255,0,0);
+    ellipse(mouseX, mouseY, 50, 50);
+  }
+  else if ((mousePressed) && (mouseButton == RIGHT)){
+    fill(0,0,255);
+    rect(mouseX, mouseY, 50, 50);
+  }
+   
 }

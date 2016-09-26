@@ -1,36 +1,28 @@
-//==========================================================//
-//       Solution for Processing Lab06_Challenge_Exercise01 //
-//                                                          //
-//   Author(s): Siobhan Drohan & Mairead Meagher, WIT       //
-//                                                          //
-//  Description:  Replicate image using for loop            //
-//                                                          //
-//  Instructions: Run the code by clicking the triangle     //
-//                button above.                             //
-//==========================================================//
+//======================================================//
+//       Solution for Processing Lab06_Challenge_01     //
+//                                                      //
+//   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
+//                                                      //
+//  Description:  Key Events                            //
+//                                                      //
+//  Instructions: Run the code by clicking the triangle //
+//                button above.                         //
+//======================================================//
 
-size(600, 300);
-background(100);
-noStroke();
- 
-int yCoordinate = 60;
-for(int i = 0; i < 4; i++) {
-  // Draw horizontal white bars 
-  fill(255);
-  rect(50, yCoordinate, 500, 10);
-  // Draw horizontal red bars 
-  fill(255,0,0);
-  rect(120, yCoordinate+10, 430, 10);
-  yCoordinate+=20;
+
+void setup() {
+  size(500,400);
+  fill(255, 10, 10);
+  stroke(255);
 }
 
-int xCoordinate = 60;
-for(int i = 0; i < 4; i++) {
-  // Draw vertical white bars 
-  fill(255);
-  rect(xCoordinate, 50, 10, 200);
-  // Draw vertical green bars 
-  fill(0,255,0);
-  rect(xCoordinate+10,130, 10, 120);
-  xCoordinate+=20;
+void draw() 
+{ 
+   background(0);
+
+   if (keyPressed)
+      if ((key == 'C') || (key == 'c'))
+         ellipse (150,150,100,100);
+      else
+         rect (150,150,100,100);     
 }

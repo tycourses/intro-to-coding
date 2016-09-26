@@ -3,27 +3,33 @@
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Clear the animated circles when the   //
-//                mouse is pressed                      //                                                     //
+//  Description:  Using conditional statements and      // 
+//                logical operators                     //                                                     //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
 //======================================================//
 
+//Reas, C. & Fry, B. (2014) Processing – A Programming Handbook for Visual Designers and Artists, 2nd Edition, MIT Press, London.
+
 void setup() {
-  size(500,400);
-  background(0);
-  stroke(255);
-  fill(45,45,45);
+  size(100, 100);
+  noStroke();
+  fill(0);
 }
 
 void draw() {
- 
-  if (mousePressed) {
-      //redraw the background when the mouse is pressed
-      background(0);
+  background(204);
+  if ((mouseX <= 50) && (mouseY <= 50)) {
+    rect(0, 0, 50, 50); // Upper-left
+  } 
+  else if ((mouseX <= 50) && (mouseY > 50)) {
+    rect(0, 50, 50, 50); // Lower-left
+  } 
+  else if ((mouseX > 50) && (mouseY <= 50)) {
+    rect(50, 0, 50, 50); // Upper-right
+  } 
+  else {
+    rect(50, 50, 50, 50); // Lower-right
   }
-
-  ellipse(mouseX, mouseY, 100, 100);
-
 }

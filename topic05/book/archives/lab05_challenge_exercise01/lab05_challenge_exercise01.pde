@@ -3,12 +3,15 @@
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Key Events                            //
+//  Description:  Bouncing ball                         //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
 //======================================================//
 
+float xCoordinate = 250;
+float yCoordinate = 300;
+boolean bounceUp = false;
 
 void setup() {
   size(500,400);
@@ -19,10 +22,20 @@ void setup() {
 void draw() 
 { 
    background(0);
+   ellipse(xCoordinate, yCoordinate, 100, 100);
 
-   if (keyPressed)
-      if ((key == 'C') || (key == 'c'))
-         ellipse (150,150,100,100);
-      else
-         rect (150,150,100,100);     
+   if (bounceUp){
+     if (yCoordinate > 100)
+         yCoordinate = yCoordinate - 1;
+     else
+         bounceUp = false;
+   }
+     
+   if (!bounceUp){
+     if (yCoordinate <= 350)
+         yCoordinate = yCoordinate + 1;
+     else
+         bounceUp = true;
+   }
+     
 }

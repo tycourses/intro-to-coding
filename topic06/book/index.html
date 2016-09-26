@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-       Iteration
+       Event Handling
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -106,14 +106,6 @@ h3
     
       <a class="item" data-tab="01">
         01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
       </a>
     
       <a class="item" data-tab="Exercises">
@@ -132,193 +124,120 @@ h3
   
   <div  class="ui tab segment lab" data-tab="Lab-06">
     <h1>Objectives</h1>
-<p>On completion of this lab you should:</p>
+<p>On completion of this lab you should be able to code animated drawings using the following constructs:</p>
 <ul>
-<li>understand variable scope and be able to code static drawings using for loops.</li>
+<li>mouse events</li>
+<li>key events</li>
 </ul>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1>Variable scope (local and global)</h1>
+    <h1>Mouse events</h1>
 <ul>
-<li>In this step, we will implement the code examples 6.1 - 6.3 from your lectures.</li>
+<li>In this step, we will implement the code examples 6.1 to 6.4 inclusive from your lectures.</li>
 </ul>
-<h2>Understanding variable scope</h2>
+<h2>Example 6.1</h2>
 <ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>lab06_variable_scope</strong>.</p>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_6_1</strong>.</p>
 </li>
 <li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
 </li>
 </ul>
-<pre><code>void setup() 
-{
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() {
+   background(0);
+   stroke(255);
+   fill(128);
+   if (mousePressed){
+       rect(45,45,34,34); 
+   }
+   else{
+       ellipse(45,45,34,34);     
+   }
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 6.2</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_6_2</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() {
+  background(204);
+  if (mousePressed == true)    
+  {
+       fill(255); // white
+   } else {
+       fill(0);     // black
+   }
+   rect(25, 25, 50, 50);
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 6.3</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_6_3</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
+  size(100,100);
+}
+
+void draw() { 
+   if (mousePressed){
+       if (mouseButton == LEFT) 
+            fill(0);      // black
+       else if (mouseButton == RIGHT)
+            fill(255);    // white
+   }        
+   else { 
+       fill(126);     // gray
+    }
+    rect(25, 25, 50, 50);
+}</code></pre>
+<ul>
+<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+</ul>
+<h2>Example 6.4</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_6_4</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() {
   size(500,400);
   background(0);
+}
+
+void draw() {
+
+  if (mousePressed) {
+    background(0);
+  }
+
   stroke(255);
   fill(45,45,45);
-}
-
-void draw() {
-  int diameter = 100;
-  if (mousePressed) 
-  {
-    diameter = diameter – 10;
-    background(0);
-  }
-  ellipse(mouseX, mouseY, diameter, diameter);
+  ellipse(mouseX, mouseY, 100, 100);
 }</code></pre>
 <ul>
-<li><p>Run your code.  Is your circle reducing in size?  Do you see the problem?  </p>
-<ul>
-<li>The diameter variable is declared in the draw() function i.e. it is a local variable.</li>
-<li>It is only “alive” while the draw() function is running. </li>
-<li>Each time the draw() function:<ul>
-<li>finishes running, the diameter variable is destroyed.</li>
-<li>is called, the diameter variable is re-created. </li>
-</ul>
+<li><p>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</p>
 </li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>To fix this, change your code so that it looks like this:</li>
-</ul>
-<pre><code>int diameter = 100;
-
-void setup() 
-{
-  size(500,400);
-  background(0);
-  stroke(255);
-  fill(45,45,45); 
-}
-
-void draw() 
-{
-  if (mousePressed) 
-  {
-    diameter = diameter - 10;
-    background(0);
-  }
-  ellipse(mouseX, mouseY, diameter, diameter);
-}</code></pre>
-<ul>
-<li><p>Run your code.  Does it work as you would expect?</p>
-</li>
-<li><p>There is a problem with the code.  In the ellipse method, the width and height are absolute values (the negative sign is dropped).</p>
-</li>
-<li><p>To handle this logic bug, we need to stop reducing the diameter by 10 when we reach a certain value, say 20.</p>
-</li>
-<li><p>Implement this code and test your code again:</p>
-</li>
-</ul>
-<pre><code>int diameter = 100;
-
-void setup() 
-{
-  size(500,400);
-  background(0);
-  stroke(255);
-  fill(45,45,45); 
-}
-
-void draw() 
-{
-  if ((mousePressed) &amp;&amp; (diameter &gt; 20))
-  {
-    diameter = diameter - 10;
-    background(0);
-  }
-  ellipse(mouseX, mouseY, diameter, diameter);
-}</code></pre>
-<ul>
-<li><p>Did you notice that it seems the reduction is larger than 10 when we press the mouse?</p>
-</li>
-<li><p>Why?  The default frame rate is 60 refreshes of the screen per second i.e. draw() is called 60 times per second. </p>
-</li>
-<li><p>You can change the frame rate by calling the frameRate() function.</p>
-</li>
-<li><p>Now try this solution:</p>
-</li>
-</ul>
-<pre><code>int diameter = 100;
-
-void setup() {
-  size(500,400);
-  background(0);
-  stroke(255);
-  fill(45,45,45); 
-  frameRate(20);
-}
-
-void draw() {
-  if ((mousePressed) &amp;&amp; (diameter &gt; 20)){
-    diameter = diameter - 10;
-    background(0);
-  }
-  ellipse(mouseX, mouseY, diameter, diameter);
-}</code></pre>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="02">
-    <h1>For Loops</h1>
-<ul>
-<li>In this step, we will implement the for loop examples from your lectures.</li>
-</ul>
-<h2>For Loop</h2>
-<ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>lab06_for_loops</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
-</li>
-</ul>
-<pre><code>int yCoordinate = 60;
-
-size(600, 300);
-background(102);
-fill(255);
-noStroke();
-
-for(int i = 0; i &lt; 4; i++) 
-{
-    rect(50, yCoordinate, 500, 10);
-    yCoordinate = yCoordinate + 20;
-}</code></pre>
-<ul>
-<li><p>Run your code.  This code should draw four white horizontal blocks.</p>
-</li>
-<li><p>Does it work as you would expect?</p>
-</li>
-</ul>
-<h2>Same loop, but without the yCoordinate variable</h2>
-<ul>
-<li><p>Update the above code by removing the yCoordinate variable and updating the for loop accordingly (the solution is in your lectures, but try to do this without looking at the slides).  </p>
-</li>
-<li><p>Does it work the same? </p>
-</li>
-</ul>
-
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="03">
-    <h2>Nested For Loops</h2>
-<ul>
-<li><p>In this step, we will implement the nested for loop example from your lectures.</p>
-</li>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>lab06_nested_for_loops</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
-</li>
-</ul>
-<pre><code>for (int i=0; i &lt; 4; i++)
-     for (int j=0; j &lt; 4; j++)
-        println(&quot;The value of i is: &quot; + i + &quot; and j is: &quot; + j);</code></pre>
-<ul>
-<li><p>Run your code.  This code should print out a series of lines to your console.</p>
-</li>
-<li><p>Look at these lines, in particular, look at the values printed for i and for j.  Do you understand the mechanics of how the nested for loop works?  </p>
+<li><p>Move the stroke and fill function calls from the draw method to the setup method.  Run your code.  Does it change the functionality of the program?  Why?</p>
 </li>
 </ul>
 
@@ -332,49 +251,36 @@ for(int i = 0; i &lt; 4; i++)
 <li><p>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
 </li>
 </ul>
-<h2>Exercise 1 (static drawing)</h2>
+<h2>Exercise 1</h2>
 <ul>
-<li><p>Create a display window of 400x400 with a gray background.</p>
+<li><p>Create a display window of 500x400, with a black background.</p>
 </li>
-<li><p>In the setup() method, use a <strong>for</strong> loop to draw a chessboard (for this exercise, use the line() method).</p>
-</li>
-<li><p>A chess board is an 8x8 grid and should look like the screen shot below:</p>
+<li><p>When the mouse is pressed, draw a red circle (100 pixel diameter) with a white outline.  Note:  when the mouse is pressed and dragged, multiple circles will be drawn.  When the mouse is released and dragged, no circles will be drawn.</p>
 </li>
 </ul>
-<p><img src="./img/00.png" alt="Chess Board using line method"></p>
-<h2>Exercise 2 (static drawing)</h2>
+<h2>Exercise 2</h2>
 <ul>
-<li>Create a new sketch and re-write the <strong>Exercise 1</strong> code so that the chess board is drawn correctly regardless of the width and height of the display window.</li>
+<li><p>Create a display window of 500x400, with a black background.</p>
+</li>
+<li><p>When the LEFT mouse button is pressed, draw a red circle (50 pixel diameter) with a white outline.  Note:  when this button is pressed and dragged, multiple circles will be drawn.</p>
+</li>
+<li><p>When the RIGHT mouse button is pressed, draw a blue square (length of 50 pixels) with a white outline.  Note:  when this button is pressed and dragged, multiple squares will be drawn.</p>
+</li>
+<li><p>When no button is pressed and the mouse is dragged, nothing is drawn.</p>
+</li>
 </ul>
-<p><img src="./img/01.png" alt="Chess Board on a non-square display window"></p>
-<h2>Console Exercise 1</h2>
+<h2>Challenge Exercise 1</h2>
 <ul>
-<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print hello 5 times to the console.  </li>
+<li><p>Visit the <a href="https://processing.org/reference/">Processing website</a> and read up on the following keyEvents:</p>
+<ul>
+<li>keyPressed (boolean variable used to determine if a key was pressed).</li>
+<li>key (which stores a single alphanumeric character i.e. the most recently pressed key).</li>
 </ul>
-<h2>Console Exercise 2</h2>
-<ul>
-<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print the numbers 1 to 10 to the console.  </li>
-</ul>
-<h2>Console Exercise 3</h2>
-<ul>
-<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print <strong>10, 9, 8, 7, 6, 5, 4, 3, 2, 1, blast off</strong> to the console.  </li>
-</ul>
-<h2>Console Exercise 4</h2>
-<ul>
-<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print all the even numbers between 2 and 10 to the console.  </li>
-</ul>
-<h2>Challenge Exercise 1 (static drawing)</h2>
-<ul>
-<li>Create a new sketch.</li>
-<li>Use two separate <strong>for</strong> loops to draw this image:</li>
-</ul>
-<p><img src="./img/02.png" alt="Image generated using for loops"></p>
-<ul>
-<li>Note: One for loop should be used to draw the horizontal portion of the image, and one for loop should be used to draw the vertical portion.</li>
-</ul>
-<h2>Challenge Exercise 2 (static drawing)</h2>
-<ul>
-<li>Create a new sketch and draw your chessboard on a 400x400 window using the rect() method instead of the line() method.  You will need a nested <strong>for</strong> loop to do this.</li>
+</li>
+<li><p>In a new sketch, draw a cirlce if the <strong>C</strong> key was pressed and a rectangle if any other key was pressed.  </p>
+</li>
+<li><p>Test your code...is the keyboard input case sensitive? Will both an upper case and a lower case <strong>c</strong> draw a circle?</p>
+</li>
 </ul>
 
   </div>

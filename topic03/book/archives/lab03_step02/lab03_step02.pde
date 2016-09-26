@@ -3,16 +3,25 @@
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Using the float data type             //
+//  Description:  Animating Ellipses                    //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
 //======================================================//
 
-// setting the size of the window
-size(200, 200);
+// called once
+void setup()
+{
+  size(500,400); 
+}
 
-//drawing a square
-float xCoordinate = 50.67;
-float yCoordinate = 100.33;
-rect(xCoordinate, yCoordinate, 80,80);
+//called continuously
+void draw()
+{
+  background(0);
+  stroke(0, 0, 0);
+  fill(60, 220, 90);
+  ellipse(mouseX, mouseY, 100, 100);
+  //ellipse(mouseY, mouseX, 100, 100);
+  //ellipse(width, mouseY, 100, 100);
+}

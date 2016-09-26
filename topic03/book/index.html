@@ -95,7 +95,7 @@ h3
   <header class="header item">
     <a href="../index.html">
       <i class="sitemap icon"></i>
-       Data Types and Operators
+       Animating your drawings
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -130,87 +130,82 @@ h3
     <h1>Objectives</h1>
 <p>On completion of this lab you should:</p>
 <ul>
-<li>understand primitive data types and be able to use a selection of them in non-complex problems and calculations.</li>
+<li>be able to write code to animate simple drawings.</li>
+<li>be aware of the system variables in the PDE and be able to use them effectively.</li>
 </ul>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="01">
-    <h1>Primitive Data Types</h1>
+    <h1>Basic Animation</h1>
 <ul>
-<li>In Java, there are:<ul>
-<li>four whole number data types:  byte, short, int, long.</li>
-<li>two decimal number data types: float and double.</li>
-<li>a single character data type: char.</li>
-<li>a true/false data type: boolean.</li>
+<li>We will use the following built-in functions to animate our drawings:<ul>
+<li>setup()</li>
+<li>draw()</li>
 </ul>
 </li>
 </ul>
-<h2>Using the int data type</h2>
+<h2>A note on the setup() function</h2>
 <ul>
-<li><p>Create a new Sketchbook in your PDE and save it as <strong>lab03_step01</strong>.</p>
+<li>setup() is called once when the program starts and should not be called again.</li>
+<li>setup() can set the screen size and background colour. </li>
+<li>There can only be one setup() function for each sketch.</li>
+</ul>
+<h2>A note on the draw() function</h2>
+<ul>
+<li>You should never call the draw() function.</li>
+<li>Processing automatically calls the draw() function straight after the setup() call.</li>
+<li>draw() continuously executes the code contained inside it.</li>
+<li>There can only be one draw() function for each sketch.</li>
+</ul>
+<h2>Animating Ellipses</h2>
+<ul>
+<li><p>Open the Processing Development Environment (PDE).  </p>
 </li>
 <li><p>Enter the following code:</p>
 </li>
 </ul>
-<p><img src="./img/06.png" alt="Using int data type to set the coordinates of lines"></p>
+<p><img src="./img/01.png" alt="Animating Ellipses"></p>
 <ul>
-<li>Run the code.  Your window should now have three blue lines similar to the screen shot below:</li>
-</ul>
-<p><img src="./img/07.png" alt="Using int data type to set the coordinates of lines"></p>
-<ul>
-<li>Update the code to produce the following output.  Note: you must use the a,b,c and d variables to generate these lines:</li>
-</ul>
-<p><img src="./img/08.png" alt="Using int data type to set the coordinates of lines"></p>
-<h2>A syntax error</h2>
-<ul>
-<li><p>Update the code by changing <strong>int</strong> to <strong>Int</strong> (uppercase I).  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
+<li><p>Using the <strong>File</strong>, <strong>Save as...</strong> menu options, save this sketchbook as <strong>lab03_step01</strong>.</p>
 </li>
-<li><p>Change <strong>Int</strong> back to <strong>int</strong>.</p>
+<li><p>Run the code.  You should have an animation similar to the screen shot below.</p>
 </li>
 </ul>
-<h2>Another syntax error</h2>
+<p><img src="./img/02.png" alt="Animating Ellipses - Multiple Circles"></p>
 <ul>
-<li><p>Update the code by changing the amount assigned to variable <strong>a</strong> from 70 to 70.56.  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
-</li>
-<li><p>Change 70.56 back to 70.</p>
-</li>
-<li><p>Save and close the sketchbook.</p>
-</li>
+<li>Can you explain why there are multiple circles drawn?  Why not just one circle? </li>
 </ul>
 
   </div>
  
   <div  class="ui tab segment lab" data-tab="02">
-    <h1>Primitive Data Types</h1>
-<h2>Using the float data type</h2>
+    <h2>Animating Ellipses (continued)</h2>
 <ul>
-<li><p>Create a new Sketchbook in your PDE and save it as <strong>lab03_step02</strong>.</p>
+<li><p>We are now going to change the code (from the previous step) so that only one circle is shown when you move the mouse.</p>
 </li>
-<li><p>Enter the following code:</p>
+<li><p>Amend your code so that the background function is in the draw method instead of the setup method:</p>
 </li>
 </ul>
-<p><img src="./img/09.png" alt="Using the float data type to set the coordinates of a square"></p>
+<p><img src="./img/03.png" alt="Animating Ellipses - One Circle"></p>
 <ul>
-<li>Run the code.  You should see a grey window with a white square drawn in it.</li>
+<li>Run the code.  You should have animation similar to the screen shot below.</li>
 </ul>
-<h2>Not a syntax error!</h2>
+<p><img src="./img/04.png" alt="Animating Ellipses - One Circle"></p>
 <ul>
-<li><p>Update the code by changing the amount assigned to the xCoordinate variable from 50.67 to just 50.</p>
-</li>
-<li><p>Run the code.  Why did it work? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
-</li>
-<li><p>Change the amount assigned to the xCoordinate variable back to 50.67.</p>
-</li>
+<li>Can you explain why there is only one circle drawn as we move our mouse? </li>
 </ul>
-<h2>A syntax error</h2>
+<h2>Playing with the System Variables</h2>
 <ul>
-<li><p>Update the code by renaming the <strong>yCoordinate</strong> variable name to <strong>xCoordinate</strong>.  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
-</li>
-<li><p>Change the code back.</p>
-</li>
-<li><p>Save and close the sketchbook.</p>
-</li>
+<li>What would happen to our animation if we swapped the <strong>mouseX</strong> and <strong>mouseY</strong> system variables in the <strong>ellipse</strong> function with each other?  Make this change (the code change is below, if you need it) and see if you can figure out what is going on.</li>
+</ul>
+<pre><code>    ellipse(mouseY, mouseX, 100, 100)</code></pre>
+<ul>
+<li>What would happen to our animation if we changed our ellipse function to be this:</li>
+</ul>
+<pre><code>    ellipse(width, mouseY, 100, 100)</code></pre>
+<ul>
+<li>Make this change and see if you can figure out what is going on.</li>
 </ul>
 
   </div>
@@ -222,54 +217,48 @@ h3
 </li>
 <li><p>For each exercise listed below, open a new sketchbook.</p>
 </li>
+<li><p>For the <strong>challenge exercises</strong> you may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
+</li>
 </ul>
-<h2>Exercise 1 (static drawing)</h2>
+<h2>Exercise 1</h2>
 <ul>
-<li>The following is a slide from your lecture:</li>
-</ul>
-<p><img src="./img/10.png" alt="Slide from your lecture"></p>
-<ul>
-<li>Using this code as a starting point, make the following changes so that your output looks like this:</li>
-</ul>
-<p><img src="./img/11.png" alt="Desired output"></p>
-<ul>
-<li>NOTE: the object of this exercise is to use the appropriate arithmetic operators e.g.<ul>
-<li>Addition (+)</li>
-<li>Subtraction (-)</li>
-<li>Division (/)</li>
-<li>Multiplication (*) <ul>
-<li>on the variables (a,b,c).</li>
+<li>Produce the following animation:<ul>
+<li>a white circle is drawn when you move the mouse; only one circle is visible at one time (i.e. all previous ones are cleared).</li>
+<li>the x and y coordinates for the circle are dependent on the mouse position (hint: use system variables mouseX and mouseY).</li>
+<li>the size of the circle is determined by the y mouse coordinate.</li>
 </ul>
 </li>
 </ul>
-</li>
+<ul>
+<li>When you run your code, your circle show grow in size as you move your mouse pointer down the window and reduce in size when you move your mouse up the window.  When you move your mouse horizontally, the circle should stay the same size.</li>
 </ul>
-<h2>Exercise 2 (static drawing)</h2>
+<h2>Exercise 2</h2>
 <ul>
-<li>The object of this exercise is to produce the same output as Exercise 1, but instead of using variables (a,b,c) use appropriate system variables (i.e. width, height) and perform artihmetic operations on them to produce the desired output.</li>
-</ul>
-<h2>Challenge Exercise 1 (static drawing)</h2>
-<ul>
-<li>The object of this exercise is to produce the same output as shown in the image below:</li>
-</ul>
-<p><img src="./img/12.png" alt="Desired output"></p>
-<ul>
-<li><p>The rules for drawing this image are as follows: </p>
-<ul>
-<li>The size of the display window is 300x300.</li>
+<li>Using exercise 1 as a starting point, add the following animation to it:<ul>
+<li>a black circle is drawn when you move the mouse (all previous black circles are cleared).</li>
+<li>the x coordinate for the circle is the mouseY coordinate and the y coordinate for the circle is mouseX.</li>
+<li>the size of the circle is determined by the x mouse coordinate.</li>
 </ul>
 </li>
 </ul>
-<pre><code>- The variables of type **int** that you will need are:
-    - **xCoord** initialised to 0.
-    - **yCoord** initialised to 0.
-    - **offset** initialised to 20.
-
-
-- There are 15 rectanges drawn and you must use the variables listed above and the system variables e.g. **height** and **width**.  You cannot hardcode the coordinates and size of the rectangles.  This means that you must use mathematical calculations (e.g. +, -, /, *) on the variables to position the rectangles and determine their size. Note: the only time you are permitted to use a number is when you are multiplying variables!
-
-
-- NOTE:  you many need to review the Order of Evaluation notes for this exercise.</code></pre>
+<ul>
+<li>When you run your code, the black circle should overlap the white circle when you drag your mouse from (0,0) diagonally down to (100,100).  When you move your mouse horizontally, the black circle show grow/shrink in size.  It remains the same size when the mouse is dragged vertically.  Note that the white circle&#39;s behaviour hasn&#39;t changed.</li>
+</ul>
+<h2>Challenge Exercise 1 (animated drawing with no cursor)</h2>
+<ul>
+<li>Do some research to figure out how to turn the mouse pointer (cursor) off.</li>
+<li>Implement this functionality in any one of your exercises above.</li>
+</ul>
+<h2>Challenge Exercise 2 (animated drawing with a different cursor)</h2>
+<ul>
+<li>Do some research to figure out how to turn the mouse pointer (cursor) into a <em>hand</em>.</li>
+<li>Implement this functionality in any one of you exercises above.</li>
+</ul>
+<h2>Challenge Exercise 3 (animated drawing using a drag effect)</h2>
+<ul>
+<li>Do some research into the Processing variables:  pmousex and pmousey.</li>
+<li>Write a Processing sketch that uses these variables. </li>
+</ul>
 
   </div>
  

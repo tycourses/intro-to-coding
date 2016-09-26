@@ -1,42 +1,30 @@
 //======================================================//
-//       Solution for Processing Lab04_Exercise01       //
+//       Solution for Processing Lab04_exercise1        //
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Conditions and Variables              //
+//  Description:  Series of lines using variables       // 
+//                and artihmetic operators              //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
 //======================================================//
 
-float rColourValue = 0;
-float gColourValue = 100;
-float bColourValue = 150;
 
-void setup() {
-  size(500,400);
-  background(0);
-  stroke(255);
-}
+size(400, 200);
+background(0);
+stroke(0,0,240);
+strokeWeight(4);
 
-void draw() 
-{ 
-   fill(rColourValue, gColourValue, bColourValue);
-   ellipse(mouseX, mouseY, 100, 100);
+int a = 50;
+int b = 1500;
+int c = 4;
 
-   if (rColourValue < 255)
-       rColourValue = rColourValue + 1;
-   else
-       rColourValue = 0;
+line(a, b/10, a*c, b/10);
+line(a, b/20, a*c, b/20);
+line(a, b/30, a*c, b/30);
+line(a, b/40, a*c, b/40);
+line(a, b/50, a*c, b/50);
 
-   if (gColourValue < 255)
-       gColourValue = gColourValue + 3;
-   else
-       gColourValue = 0;
- 
-   if (bColourValue < 255)
-       bColourValue = bColourValue + 6;
-   else
-       bColourValue = 0;
- 
-}
+line(a, b/50, a, b/10);
+line(a*c, b/50, a*c, b/10);
