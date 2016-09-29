@@ -7,14 +7,14 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
       <style>
@@ -36,10 +36,6 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
     </style>
@@ -47,12 +43,6 @@ figcaption
   </head>
 
   <body>
-
-    
-
-
-
-  <div class="ui container">
     
 
 <style>
@@ -93,234 +83,236 @@ h3
 
 <div class="ui fixed top pointing inverted menu labmenu">
   <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-      <i class="sitemap icon"></i>
-       Conditional Statements
+       Data Types and Operators
     </a>
   </header>
   <div class="right tab-menu menu">
     
-      <a class="item" data-tab="Lab-04">
-        Lab-04
-      </a>
+    <a class="item" data-tab="Lab-04">
+      Lab-04
+    </a>
     
-      <a class="item" data-tab="01">
-        01
-      </a>
+    <a class="item" data-tab="01">
+      01
+    </a>
     
-      <a class="item" data-tab="02">
-        02
-      </a>
+    <a class="item" data-tab="02">
+      02
+    </a>
     
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
     
-      <a class="item" data-tab="Solutions">
-        Solutions
-      </a>
+    <a class="item" data-tab="Solutions">
+      Solutions
+    </a>
     
-    </div>
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
 </div>
 
-<br><br>
-
-  
-  <div  class="ui tab segment lab" data-tab="Lab-04">
-    <h1>Objectives</h1>
-<p>On completion of this lab you should be able to code animated drawings using the following constructs:</p>
-<ul>
-<li>conditional statements</li>
-<li>relational operators</li>
-<li>logical operators</li>
-</ul>
-
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07/book/index.html">
+          Lab-07
+        </a>
+      
+    
   </div>
- 
-  <div  class="ui tab segment lab" data-tab="01">
-    <h1>Conditional statements and boolean expressions</h1>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-04">
+        <h1>Objectives</h1>
+<p>On completion of this lab you should:</p>
 <ul>
-<li>In this step, we will implement the code examples 4.1 and 4.2 from your lectures.</li>
-</ul>
-<h2>Conditional Example 4.1</h2>
-<ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_4_1</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
-</li>
-</ul>
-<pre><code>void setup() {
-    size(100, 100);
-    noStroke();
-    fill(0);
-}
-
-void draw() {
-    background(204);
-    if (mouseX &lt; 50) 
-    {
-       rect(0, 0, 50, 100); 
-    } 
-    else 
-    {
-       rect(50, 0, 50, 100); 
-    }
-}</code></pre>
-<ul>
-<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
-</ul>
-<h2>Conditional Example 4.2</h2>
-<ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_4_2</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
-</li>
-</ul>
-<pre><code>void setup() {
-    size(100, 100);
-    noStroke();
-    fill(0);
-}
-
-void draw() {
-    background(204);
-    if (mouseX &lt; 33) {
-        rect(0, 0, 33, 100); 
-    } 
-    else if (mouseX &lt; 66) {
-        rect(33, 0, 33, 100); 
-    } 
-    else {
-         rect(66, 0, 33, 100); 
-    }  
-}</code></pre>
-<ul>
-<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+<li>understand primitive data types and be able to use a selection of them in non-complex problems and calculations.</li>
 </ul>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="02">
-    <h1>Conditional statements and logical operators</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Primitive Data Types</h1>
 <ul>
-<li>In this step, we will implement the code examples 4.3 and 4.4 from your lectures.</li>
+<li>In Java, there are:<ul>
+<li>four whole number data types:  byte, short, int, long.</li>
+<li>two decimal number data types: float and double.</li>
+<li>a single character data type: char.</li>
+<li>a true/false data type: boolean.</li>
 </ul>
-<h2>Conditional Example 4.3</h2>
-<ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_4_3</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
-</li>
-</ul>
-<pre><code>void setup() {
-  size(100, 100);
-  noStroke();
-  fill(0);
-}
-
-void draw() {
-  background(204);
-  if ((mouseX &gt; 40) &amp;&amp; (mouseX &lt; 80) &amp;&amp;
-      (mouseY &gt; 20) &amp;&amp; (mouseY &lt; 80)) {
-      fill(255);
-  } else {
-      fill(0);
-  }
-  rect(40, 20, 40, 60);
-}</code></pre>
-<ul>
-<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
-</ul>
-<h2>Conditional Example 4.4</h2>
-<ul>
-<li><p>Create a new Processing sketch in your workspace and call it <strong>Example_4_4</strong>.</p>
-</li>
-<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
 </li>
 </ul>
-<pre><code>void setup() {
-  size(100, 100);
-  noStroke();
-  fill(0);
-}
-
-void draw() {
-  background(204);
-  if ((mouseX &lt;= 50) &amp;&amp; (mouseY &lt;= 50)) {
-    rect(0, 0, 50, 50);             // upper-left
-  } else if ((mouseX &lt;= 50) &amp;&amp; (mouseY &gt; 50)) {
-    rect(0, 50, 50, 50);            // lower-left
-  } else if ((mouseX &gt; 50) &amp;&amp; (mouseY &lt;= 50)) {
-    rect(50, 0, 50, 50);            // upper-right
-  } else {
-    rect(50, 50, 50, 50);           // lower-right
-  }
-}</code></pre>
+<h2>Using the int data type</h2>
 <ul>
-<li>Run your code.  Does it work as you would expect?  From looking at the code, what do you think should happen?</li>
+<li><p>Create a new Sketchbook in your PDE and save it as <strong>lab04_step01</strong>.</p>
+</li>
+<li><p>Enter the following code:</p>
+</li>
+</ul>
+<p><img src="./img/06.png" alt="Using int data type to set the coordinates of lines"></p>
+<ul>
+<li>Run the code.  Your window should now have three blue lines similar to the screen shot below:</li>
+</ul>
+<p><img src="./img/07.png" alt="Using int data type to set the coordinates of lines"></p>
+<ul>
+<li>Update the code to produce the following output.  Note: you must use the a,b,c and d variables to generate these lines:</li>
+</ul>
+<p><img src="./img/08.png" alt="Using int data type to set the coordinates of lines"></p>
+<h2>A syntax error</h2>
+<ul>
+<li><p>Update the code by changing <strong>int</strong> to <strong>Int</strong> (uppercase I).  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
+</li>
+<li><p>Change <strong>Int</strong> back to <strong>int</strong>.</p>
+</li>
+</ul>
+<h2>Another syntax error</h2>
+<ul>
+<li><p>Update the code by changing the amount assigned to variable <strong>a</strong> from 70 to 70.56.  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
+</li>
+<li><p>Change 70.56 back to 70.</p>
+</li>
+<li><p>Save and close the sketchbook.</p>
+</li>
 </ul>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="Exercises">
-    <h1>Exercises</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Primitive Data Types</h1>
+<h2>Using the float data type</h2>
 <ul>
+<li><p>Create a new Sketchbook in your PDE and save it as <strong>lab04_step02</strong>.</p>
+</li>
+<li><p>Enter the following code:</p>
+</li>
+</ul>
+<p><img src="./img/09.png" alt="Using the float data type to set the coordinates of a square"></p>
+<ul>
+<li>Run the code.  You should see a grey window with a white square drawn in it.</li>
+</ul>
+<h2>Not a syntax error!</h2>
+<ul>
+<li><p>Update the code by changing the amount assigned to the xCoordinate variable from 50.67 to just 50.</p>
+</li>
+<li><p>Run the code.  Why did it work? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
+</li>
+<li><p>Change the amount assigned to the xCoordinate variable back to 50.67.</p>
+</li>
+</ul>
+<h2>A syntax error</h2>
+<ul>
+<li><p>Update the code by renaming the <strong>yCoordinate</strong> variable name to <strong>xCoordinate</strong>.  Run your code again.  What happened? Can you explain what happened?  Ask your teacher to explain it if you are not sure. </p>
+</li>
+<li><p>Change the code back.</p>
+</li>
+<li><p>Save and close the sketchbook.</p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Exercises</h1>
+<ul>
+<li><p>The exercises are typically based on the material we covered in the previous steps in this lab.</p>
+</li>
 <li><p>For each exercise listed below, open a new sketchbook.</p>
 </li>
-<li><p>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
-</li>
 </ul>
-<h2>Exercise 1</h2>
+<h2>Exercise 1 (static drawing)</h2>
 <ul>
-<li><p>The object of this exercise is to produce an animation that will:</p>
-<ul>
-<li>Draw circles (diameter 100) as the mouse is moved (the background should not be cleared).</li>
-<li>As each circle is drawn, vary its colour from the previous one (use mathematical calculations on your RBG colours).</li>
+<li>The following is a slide from your lecture:</li>
 </ul>
+<p><img src="./img/10.png" alt="Slide from your lecture"></p>
 <ul>
-<li><p>To code this exercise, follow these steps:</p>
+<li>Using this code as a starting point, make the following changes so that your output looks like this:</li>
+</ul>
+<p><img src="./img/11.png" alt="Desired output"></p>
 <ul>
-<li><p>Declare three variables (rColourValue, gColourValue, bColourValue) of type <strong>float</strong>.  Give rColourValue a starting value of 0, gColourValue a starting value of 100, and bColourValue a starting value of 150. </p>
-</li>
-<li><p>In the setup() method, set the size of the window to 500x400, the background to black and the stroke to white.</p>
-</li>
-<li><p>In the draw() method:</p>
-<ul>
-<li>set the fill to (rColourValue, gColourValue, bColourValue).</li>
-<li>draw a circle with a diameter of 100 at the current mouse location.</li>
-<li>write an if statement that will add one to the rColourvalue if it is currently less than 255, otherwise set the rColourValue to zero.  Write a similar if statement for the gColourValue and the bColourValue.</li>
+<li>NOTE: the object of this exercise is to use the appropriate arithmetic operators e.g.<ul>
+<li>Addition (+)</li>
+<li>Subtraction (-)</li>
+<li>Division (/)</li>
+<li>Multiplication (*) <ul>
+<li>on the variables (a,b,c).</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>NOTE:  Make sure you <strong>boundary</strong> test this exercise.  What we mean by that is...test what happens when your colour reaches 0 or when it reaches 255.  Does it reset itself and cycle through the colours again or does it get stuck in drawing only one colour?</p>
-</li>
-</ul>
-<h2>Challenge Exercise 1</h2>
+<h2>Exercise 2 (static drawing)</h2>
 <ul>
-<li><p>Draw a continuously bouncing ball.  </p>
-</li>
-<li><p>For the moment, the xCoordiate should remain the same value i.e. the ball only bounces vertically, so it is only the yCoordiate that needs to change.</p>
-</li>
+<li>The object of this exercise is to produce the same output as Exercise 1, but instead of using variables (a,b,c) use appropriate system variables (i.e. width, height) and perform artihmetic operations on them to produce the desired output.</li>
 </ul>
-<h2>Challenge Exercise 2</h2>
+<h2>Challenge Exercise 1 (static drawing)</h2>
 <ul>
-<li><p>In a new sketch, draw a vertical line that is the height of your display window.</p>
+<li>The object of this exercise is to produce the same output as shown in the image below:</li>
+</ul>
+<p><img src="./img/12.png" alt="Desired output"></p>
+<ul>
+<li><p>The rules for drawing this image are as follows: </p>
+<ul>
+<li>The size of the display window is 300x300.</li>
+<li>The variables of type <strong>int</strong> that you will need are:<ul>
+<li><strong>xCoord</strong> initialised to 0.</li>
+<li><strong>yCoord</strong> initialised to 0.</li>
+<li><strong>offset</strong> initialised to 20.</li>
+</ul>
 </li>
-<li><p>This vertical line should start in the left most position of your display window and move right, pixel by pixel, until it reaches the right hand side of your display window.  </p>
-</li>
-<li><p>Upon reaching the right hand side, the vertical line should reverse direction and return, pixel by pixel, to the left hand side of the display window.</p>
-</li>
-<li><p>As your vertical line is continually traversing the display window, your grayscale background should be varying very slightly in colour.  </p>
+<li>There are 15 rectanges drawn and you must use the variables listed above and the system variables e.g. <strong>height</strong> and <strong>width</strong>.  You cannot hardcode the coordinates and size of the rectangles.  This means that you must use mathematical calculations (e.g. +, -, /, *) on the variables to position the rectangles and determine their size. Note: the only time you are permitted to use a number is when you are multiplying variables!  </li>
+<li>NOTE:  you many need to review the Order of Evaluation notes for this exercise.</li>
+</ul>
 </li>
 </ul>
 
-  </div>
- 
-  <div  class="ui tab segment lab" data-tab="Solutions">
-    <h1>Solutions</h1>
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Solutions">
+        <h1>Solutions</h1>
 <ul>
 <li><p>The solutions for this lab can be found <a href="archives/lab04_solutions.zip">here</a>.  </p>
 </li>
@@ -328,34 +320,25 @@ void draw() {
 </li>
 </ul>
 
+      </div>
+     
+    </div>
   </div>
- 
-
-
-<script>
-$('.ui.menu .item')
-  .tab({
-    history: true,
-    historyType: 'hash'
-  })
-;
-</script>
-
-   </div>
-
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) . Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) .
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
     </div>
   </div>
 
+    <footer>
+
+    </footer>
     <script>
       
 $(document).ready(function()
@@ -376,10 +359,21 @@ $(document).ready(function()
   });
 
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>

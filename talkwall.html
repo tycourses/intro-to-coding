@@ -7,14 +7,14 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
       <style>
@@ -36,10 +36,6 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
     </style>
@@ -47,59 +43,110 @@ figcaption
   </head>
 
   <body>
-
     
 
 
-
-  <div class="ui container">
-    
+  
 
 
-  <header class="ui middle aligned center aligned stackable grid segment">
-    <a class="ui blue left corner label">
-      <i class="film big  icon"></i>
+
+
+
+<header class="ui middle aligned center aligned stackable grid segment">
+
+  <a class="ui blue left corner label">
+  <div id="showTOC" class="popup" data-content="Reveal TOC">
+    <i id="toc" class="sitemap big  icon"></i>
+  </div>
+</a>
+
+  <div class="seven wide center aligned column">
+    <h2 class="headder"> Introduction to Processing (using Java)</h2>
+    <p> All Slides in the Course </p>
+  </div>
+
+  
+<div class="two wide column sitemap">
+  <div class="popup" data-content="Top Level Topic View">
+    <a href="index.html"> <i class="huge home icon"></i> Topics </a>
+  </div>
+</div>
+
+  
+<div class="four wide column">
+  <div class="ui center aligned mini message segment">
+    Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) .
+    <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons License
     </a>
-    <div class="eight wide center aligned column">
-      <h2 class="headder">    Introduction to Processing (using Java) </h2>
-    </div>
-    <div class="one wide column sitemap">
-      <div class="popup" data-content="Top Level Topic View">
-        <a href="index.html"> <i class="big sitemap icon"></i>  topics </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Presentations">
-        <a href="talkwall.html"> <i class="big film icon"></i>  slides </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Labs">
-        <a href="labwall.html"> <i class="big lab icon"></i> labs </a>
-      </div>
-    </div>
-    <div class="five wide column">
-      <img class="ui centered medium image" src="http://www.wit.ie/assets/images/wit_crest.png">
-    </div>
-  </header>
+  </div>
+</div>
 
-<script>
-  $('.popup')
-  .popup()
-;
-</script>
-
-
-<div class="ui four doubling stackable cards">
   
-  
-  <a class="ui raised link card" href="topic01/talk-1/a-processing-static-drawings.pdf">
+<div class="ui two wide right aligned column">
+  <div class="ui left aligned middle aligned very basic grid">
+    <div class="row">
+      <div class="popup" data-content="All Slides in Course">
+        <a href="talkwall.html"> <i class="large film icon"></i> All Slides </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="popup" data-content="All Labs in Course">
+        <a href="labwall.html"> <i class="large lab icon"></i> All Labs </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</header>
+
+
+
+<div class="ui bottom attached segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+    <a class="item" href="topic01/talk/a-processing-static-drawings.pdf">
+      Static Drawings
+    </a>
+    
+    <a class="item" href="topic02/talk/a-processing-formatting-shapes.pdf">
+      Formatting Shapes
+    </a>
+    
+    <a class="item" href="topic03/talk-1/a-processing-basic-animation.pdf">
+      Basic Animation
+    </a>
+    
+    <a class="item" href="topic04/talk-1/a-processing-data-types.pdf">
+      Data Types
+    </a>
+    
+    <a class="item" href="topic05/talk-1/a-processing-conditional-statements.pdf">
+      Conditional Statements
+    </a>
+    
+    <a class="item" href="topic06/talk-1/a-processing-mouse-events.pdf">
+      Event Handling
+    </a>
+    
+    <a class="item" href="topic07/talk-1/a-processing-iteration-for.pdf">
+      Iteration
+    </a>
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <div class="ui four doubling stackable cards">
+        
+        
+  <a class="ui raised link card" href="topic01/talk/a-processing-static-drawings.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Static Drawings </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic01/talk-1/a-processing-static-drawings.jpg">
+      <img class="ui bordered rounded image" src="topic01/talk/a-processing-static-drawings.jpg">
     </div>
     <div class="content">
       <div class="description">
@@ -109,15 +156,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic01/talk-2/b-processing-formatting-shapes.pdf">
+        
+        
+  <a class="ui raised link card" href="topic02/talk/a-processing-formatting-shapes.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Formatting Shapes </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic01/talk-2/b-processing-formatting-shapes.jpg">
+      <img class="ui bordered rounded image" src="topic02/talk/a-processing-formatting-shapes.jpg">
     </div>
     <div class="content">
       <div class="description">
@@ -127,15 +174,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic02/talk-1/a-processing-basic-animation.pdf">
+        
+        
+  <a class="ui raised link card" href="topic03/talk-1/a-processing-basic-animation.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Basic Animation </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic02/talk-1/a-processing-basic-animation.png">
+      <img class="ui bordered rounded image" src="topic03/talk-1/a-processing-basic-animation.png">
     </div>
     <div class="content">
       <div class="description">
@@ -145,15 +192,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic03/talk-1/a-processing-data-types.pdf">
+        
+        
+  <a class="ui raised link card" href="topic04/talk-1/a-processing-data-types.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Data Types </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic03/talk-1/a-processing-data-types.png">
+      <img class="ui bordered rounded image" src="topic04/talk-1/a-processing-data-types.png">
     </div>
     <div class="content">
       <div class="description">
@@ -163,15 +210,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic04/talk-1/a-processing-conditional-statements.pdf">
+        
+        
+  <a class="ui raised link card" href="topic05/talk-1/a-processing-conditional-statements.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Conditional Statements </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic04/talk-1/a-processing-conditional-statements.png">
+      <img class="ui bordered rounded image" src="topic05/talk-1/a-processing-conditional-statements.png">
     </div>
     <div class="content">
       <div class="description">
@@ -181,15 +228,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic05/talk-1/a-processing-mouse-events.pdf">
+        
+        
+  <a class="ui raised link card" href="topic06/talk-1/a-processing-mouse-events.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Event Handling </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic05/talk-1/a-processing-mouse-events.png">
+      <img class="ui bordered rounded image" src="topic06/talk-1/a-processing-mouse-events.png">
     </div>
     <div class="content">
       <div class="description">
@@ -199,15 +246,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="topic06/talk-1/a-processing-iteration-for.pdf">
+        
+        
+  <a class="ui raised link card" href="topic07/talk-1/a-processing-iteration-for.pdf">
     <div class="content">
         <div class="right floated meta"> <i class="film large icon"></i></div>
         <div class="header"> Iteration </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="topic06/talk-1/a-processing-iteration-for.png">
+      <img class="ui bordered rounded image" src="topic07/talk-1/a-processing-iteration-for.png">
     </div>
     <div class="content">
       <div class="description">
@@ -217,25 +264,16 @@ figcaption
     </div>
   </a>
 
-  
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 
-   </div>
+    <footer>
 
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) . Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
-    </div>
-  </div>
-
+    </footer>
     <script>
       
 $(document).ready(function()
@@ -256,10 +294,21 @@ $(document).ready(function()
   });
 
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>

@@ -7,14 +7,14 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.css" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2/semantic.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
 
       <style>
@@ -36,10 +36,6 @@ figcaption
   align-items: center;
 }
 
-.credits
-{
-  min-height:20px;
-}
 
 
     </style>
@@ -47,67 +43,242 @@ figcaption
   </head>
 
   <body>
-
     
 
 
 
-  <div class="ui container">
-    
 
 
-  <header class="ui middle aligned center aligned stackable grid segment">
-    <a class="ui blue left corner label">
-      <i class="sitemap big  icon"></i>
+
+
+<header class="ui middle aligned center aligned stackable grid segment">
+
+  <a class="ui blue left corner label">
+  <div id="showTOC" class="popup" data-content="Reveal TOC">
+    <i id="toc" class="sitemap big  icon"></i>
+  </div>
+</a>
+
+  <div class="seven wide center aligned column">
+    <h2 class="headder"> Introduction to Processing (using Java)</h2>
+    <p> Top Level Topics </p>
+  </div>
+
+  
+<div class="two wide column sitemap">
+  <div class="popup" data-content="Top Level Topic View">
+    <a href="#"> <i class="huge home icon"></i> Topics </a>
+  </div>
+</div>
+
+  
+<div class="four wide column">
+  <div class="ui center aligned mini message segment">
+    Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) .
+    <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons License
     </a>
-    <div class="eight wide center aligned column">
-      <h2 class="headder">    Introduction to Processing (using Java) </h2>
-    </div>
-    <div class="one wide column sitemap">
-      <div class="popup" data-content="Top Level Topic View">
-        <a href="index.html"> <i class="big sitemap icon"></i>  topics </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Presentations">
-        <a href="talkwall.html"> <i class="big film icon"></i>  slides </a>
-      </div>
-    </div>
-    <div class="one wide column">
-      <div class="popup" data-content="All Labs">
-        <a href="labwall.html"> <i class="big lab icon"></i> labs </a>
-      </div>
-    </div>
-    <div class="five wide column">
-      <img class="ui centered medium image" src="http://www.wit.ie/assets/images/wit_crest.png">
-    </div>
-  </header>
+  </div>
+</div>
 
-<script>
-  $('.popup')
-  .popup()
-;
-</script>
-
-
-
-<div class="ui four doubling stackable cards">
 
   
-  
+<div class="ui two wide right aligned column">
+  <div class="ui left aligned middle aligned very basic grid">
+    <div class="row">
+      <div class="popup" data-content="All Slides in Course">
+        <a href="talkwall.html"> <i class="large film icon"></i> All Slides </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="popup" data-content="All Labs in Course">
+        <a href="labwall.html"> <i class="large lab icon"></i> All Labs </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</header>
+
+
+<div class="ui segment pushable">
+  <div class="ui inverted inline vertical sidebar menu">
+    
+    <div class="header">
+      <a class="item" href="topic01/index.html">
+         Introduction to Processing
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic01/talk/a-processing-static-drawings.pdf">
+          Static Drawings</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic01/book/index.html">
+          Lab-01</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic02/index.html">
+         Formatting drawings
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic02/talk/a-processing-formatting-shapes.pdf">
+          Formatting Shapes</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic02/book/index.html">
+          Lab-02</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic03/index.html">
+         Animating your drawings
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic03/talk-1/a-processing-basic-animation.pdf">
+          Basic Animation</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic03/book/index.html">
+          Lab-03</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic04/index.html">
+         Data Types and Operators
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic04/talk-1/a-processing-data-types.pdf">
+          Data Types</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic04/book/index.html">
+          Lab-04</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic05/index.html">
+         Conditional Statements
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic05/talk-1/a-processing-conditional-statements.pdf">
+          Conditional Statements</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic05/book/index.html">
+          Lab-05</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic06/index.html">
+         Event Handling
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic06/talk-1/a-processing-mouse-events.pdf">
+          Event Handling</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic06/book/index.html">
+          Lab-06</a>
+      </div>
+      
+    </div>
+    
+    <div class="header">
+      <a class="item" href="topic07/index.html">
+         Iteration
+      </a>
+    </div>
+    <div class="menu">
+      
+      <div class="menu">
+        <a class="item" href="topic07/talk-1/a-processing-iteration-for.pdf">
+          Iteration</a>
+      </div>
+      
+      <div class="menu">
+        <a class="item" href="topic07/book/index.html">
+          Lab-07</a>
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <div class="ui four doubling stackable cards">
+        
+          
   <a class="ui raised link card" href="./topic01/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Introduction to Processing </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic01/talk-1/a-processing-static-drawings.jpg">
+      <img class="ui bordered rounded image" src="./topic01/talk/a-processing-static-drawings.jpg">
     </div>
     <div class="content">
       <div class="description">
          <p>When you are finished this session you should be:</p>
 <ul>
 <li>familiar with Processing and it&#39;s development environment (PDE).</li>
+<li>able to use methods to draw basic shapes.</li>
+</ul>
+
+      </div>
+    </div>
+  </a>
+
+        
+          
+  <a class="ui raised link card" href="./topic02/index.html">
+    <div class="content">
+        <div class="right floated meta"> <i class="sitemap large icon"></i></div>
+        <div class="header">  Formatting drawings </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="./topic02/talk/a-processing-formatting-shapes.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>When you are finished this session you should be:</p>
+<ul>
 <li>able to use methods to draw and format basic shapes. </li>
 <li>familiar with Grayscale and RGB colours.</li>
 </ul>
@@ -116,15 +287,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="./topic02/index.html">
+        
+          
+  <a class="ui raised link card" href="./topic03/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Animating your drawings </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic02/talk-1/a-processing-basic-animation.png">
+      <img class="ui bordered rounded image" src="./topic03/talk-1/a-processing-basic-animation.png">
     </div>
     <div class="content">
       <div class="description">
@@ -138,15 +309,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="./topic03/index.html">
+        
+          
+  <a class="ui raised link card" href="./topic04/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Data Types and Operators </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic03/talk-1/a-processing-data-types.png">
+      <img class="ui bordered rounded image" src="./topic04/talk-1/a-processing-data-types.png">
     </div>
     <div class="content">
       <div class="description">
@@ -159,15 +330,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="./topic04/index.html">
+        
+          
+  <a class="ui raised link card" href="./topic05/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Conditional Statements </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic04/talk-1/a-processing-conditional-statements.png">
+      <img class="ui bordered rounded image" src="./topic05/talk-1/a-processing-conditional-statements.png">
     </div>
     <div class="content">
       <div class="description">
@@ -182,15 +353,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="./topic05/index.html">
+        
+          
+  <a class="ui raised link card" href="./topic06/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Event Handling </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic05/talk-1/a-processing-mouse-events.png">
+      <img class="ui bordered rounded image" src="./topic06/talk-1/a-processing-mouse-events.png">
     </div>
     <div class="content">
       <div class="description">
@@ -204,15 +375,15 @@ figcaption
     </div>
   </a>
 
-  
-  
-  <a class="ui raised link card" href="./topic06/index.html">
+        
+          
+  <a class="ui raised link card" href="./topic07/index.html">
     <div class="content">
         <div class="right floated meta"> <i class="sitemap large icon"></i></div>
         <div class="header">  Iteration </div>
     </div>
     <div class="image">
-      <img class="ui bordered rounded image" src="./topic06/talk-1/a-processing-iteration-for.png">
+      <img class="ui bordered rounded image" src="./topic07/talk-1/a-processing-iteration-for.png">
     </div>
     <div class="content">
       <div class="description">
@@ -226,26 +397,16 @@ figcaption
     </div>
   </a>
 
-  
-
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 
-   </div>
+    <footer>
 
-   
-  <br><br>
-  <div class="ui bottom fixed borderless menu">
-    <div class="ui small item">
-    <p id="footertext">
-    Prepared by  Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) . Except where otherwise noted, this content is licensed under a
-     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
-     </a>
-     </p>
-    </div>
-  </div>
-
+    </footer>
     <script>
       
 $(document).ready(function()
@@ -266,10 +427,21 @@ $(document).ready(function()
   });
 
 
-})
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
 
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
 
     </script>
-
   </body>
+
  </html>

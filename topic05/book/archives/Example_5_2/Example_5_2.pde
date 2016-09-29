@@ -3,7 +3,7 @@
 //                                                      //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
 //                                                      //
-//  Description:  Responding to mouse events            //                                                     //
+//  Description:  Using conditional statements          //
 //                                                      //
 //  Instructions: Run the code by clicking the triangle //
 //                button above.                         //
@@ -13,14 +13,17 @@
 
 void setup() {
   size(100, 100);
-} 
+  noStroke();
+  fill(0);
+}
 
 void draw() {
   background(204);
-  if (mousePressed == true) {
-    fill(255); // White
+  if (mouseX < 33) {
+    rect(0, 0, 33, 100); // Left
+  } else if (mouseX < 66) {
+    rect(33, 0, 33, 100); // Middle
   } else {
-    fill(0); // Black
+    rect(66, 0, 33, 100); // Right
   }
-  rect(25, 25, 50, 50);
 }

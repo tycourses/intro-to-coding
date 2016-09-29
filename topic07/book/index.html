@@ -1,0 +1,487 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+        
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+       Iteration
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-07">
+      Lab-07
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <a class="item" data-tab="Solutions">
+      Solutions
+    </a>
+    
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic07/book/index.html">
+          Lab-07
+        </a>
+      
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-07">
+        <h1>Objectives</h1>
+<p>On completion of this lab you should:</p>
+<ul>
+<li>understand variable scope and be able to code static drawings using for loops.</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Variable scope (local and global)</h1>
+<ul>
+<li>In this step, we will implement the code examples 7.1 - 7.3 from your lectures.</li>
+</ul>
+<h2>Understanding variable scope</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>lab07_variable_scope</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>void setup() 
+{
+  size(500,400);
+  background(0);
+  stroke(255);
+  fill(45,45,45);
+}
+
+void draw() {
+  int diameter = 100;
+  if (mousePressed) 
+  {
+    diameter = diameter – 10;
+    background(0);
+  }
+  ellipse(mouseX, mouseY, diameter, diameter);
+}</code></pre>
+<ul>
+<li><p>Run your code.  Is your circle reducing in size?  Do you see the problem?  </p>
+<ul>
+<li>The diameter variable is declared in the draw() function i.e. it is a local variable.</li>
+<li>It is only “alive” while the draw() function is running. </li>
+<li>Each time the draw() function:<ul>
+<li>finishes running, the diameter variable is destroyed.</li>
+<li>is called, the diameter variable is re-created. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>To fix this, change your code so that it looks like this:</li>
+</ul>
+<pre><code>int diameter = 100;
+
+void setup() 
+{
+  size(500,400);
+  background(0);
+  stroke(255);
+  fill(45,45,45); 
+}
+
+void draw() 
+{
+  if (mousePressed) 
+  {
+    diameter = diameter - 10;
+    background(0);
+  }
+  ellipse(mouseX, mouseY, diameter, diameter);
+}</code></pre>
+<ul>
+<li><p>Run your code.  Does it work as you would expect?</p>
+</li>
+<li><p>There is a problem with the code.  In the ellipse method, the width and height are absolute values (the negative sign is dropped).</p>
+</li>
+<li><p>To handle this logic bug, we need to stop reducing the diameter by 10 when we reach a certain value, say 20.</p>
+</li>
+<li><p>Implement this code and test your code again:</p>
+</li>
+</ul>
+<pre><code>int diameter = 100;
+
+void setup() 
+{
+  size(500,400);
+  background(0);
+  stroke(255);
+  fill(45,45,45); 
+}
+
+void draw() 
+{
+  if ((mousePressed) &amp;&amp; (diameter &gt; 20))
+  {
+    diameter = diameter - 10;
+    background(0);
+  }
+  ellipse(mouseX, mouseY, diameter, diameter);
+}</code></pre>
+<ul>
+<li><p>Did you notice that it seems the reduction is larger than 10 when we press the mouse?</p>
+</li>
+<li><p>Why?  The default frame rate is 60 refreshes of the screen per second i.e. draw() is called 60 times per second. </p>
+</li>
+<li><p>You can change the frame rate by calling the frameRate() function.</p>
+</li>
+<li><p>Now try this solution:</p>
+</li>
+</ul>
+<pre><code>int diameter = 100;
+
+void setup() {
+  size(500,400);
+  background(0);
+  stroke(255);
+  fill(45,45,45); 
+  frameRate(20);
+}
+
+void draw() {
+  if ((mousePressed) &amp;&amp; (diameter &gt; 20)){
+    diameter = diameter - 10;
+    background(0);
+  }
+  ellipse(mouseX, mouseY, diameter, diameter);
+}</code></pre>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>For Loops</h1>
+<ul>
+<li>In this step, we will implement the for loop examples from your lectures.</li>
+</ul>
+<h2>For Loop</h2>
+<ul>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>lab07_for_loops</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>int yCoordinate = 60;
+
+size(600, 300);
+background(102);
+fill(255);
+noStroke();
+
+for(int i = 0; i &lt; 4; i++) 
+{
+    rect(50, yCoordinate, 500, 10);
+    yCoordinate = yCoordinate + 20;
+}</code></pre>
+<ul>
+<li><p>Run your code.  This code should draw four white horizontal blocks.</p>
+</li>
+<li><p>Does it work as you would expect?</p>
+</li>
+</ul>
+<h2>Same loop, but without the yCoordinate variable</h2>
+<ul>
+<li><p>Update the above code by removing the yCoordinate variable and updating the for loop accordingly (the solution is in your lectures, but try to do this without looking at the slides).  </p>
+</li>
+<li><p>Does it work the same? </p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h2>Nested For Loops</h2>
+<ul>
+<li><p>In this step, we will implement the nested for loop example from your lectures.</p>
+</li>
+<li><p>Create a new Processing sketch in your workspace and call it <strong>lab07_nested_for_loops</strong>.</p>
+</li>
+<li><p>Enter the following code into your sketchbook (don&#39;t copy and paste...write the code out):</p>
+</li>
+</ul>
+<pre><code>for (int i=0; i &lt; 4; i++)
+     for (int j=0; j &lt; 4; j++)
+        println(&quot;The value of i is: &quot; + i + &quot; and j is: &quot; + j);</code></pre>
+<ul>
+<li><p>Run your code.  This code should print out a series of lines to your console.</p>
+</li>
+<li><p>Look at these lines, in particular, look at the values printed for i and for j.  Do you understand the mechanics of how the nested for loop works?  </p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Exercises</h1>
+<ul>
+<li><p>For each exercise listed below, open a new sketchbook.</p>
+</li>
+<li><p>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</p>
+</li>
+</ul>
+<h2>Exercise 1 (static drawing)</h2>
+<ul>
+<li><p>Create a display window of 400x400 with a gray background.</p>
+</li>
+<li><p>In the setup() method, use a <strong>for</strong> loop to draw a chessboard (for this exercise, use the line() method).</p>
+</li>
+<li><p>A chess board is an 8x8 grid and should look like the screen shot below:</p>
+</li>
+</ul>
+<p><img src="./img/00.png" alt="Chess Board using line method"></p>
+<h2>Exercise 2 (static drawing)</h2>
+<ul>
+<li>Create a new sketch and re-write the <strong>Exercise 1</strong> code so that the chess board is drawn correctly regardless of the width and height of the display window.</li>
+</ul>
+<p><img src="./img/01.png" alt="Chess Board on a non-square display window"></p>
+<h2>Console Exercise 1</h2>
+<ul>
+<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print hello 5 times to the console.  </li>
+</ul>
+<h2>Console Exercise 2</h2>
+<ul>
+<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print the numbers 1 to 10 to the console.  </li>
+</ul>
+<h2>Console Exercise 3</h2>
+<ul>
+<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print <strong>10, 9, 8, 7, 6, 5, 4, 3, 2, 1, blast off</strong> to the console.  </li>
+</ul>
+<h2>Console Exercise 4</h2>
+<ul>
+<li>Create a new sketch and use a <strong>for</strong> loop and the println method to print all the even numbers between 2 and 10 to the console.  </li>
+</ul>
+<h2>Challenge Exercise 1 (static drawing)</h2>
+<ul>
+<li>Create a new sketch.</li>
+<li>Use two separate <strong>for</strong> loops to draw this image:</li>
+</ul>
+<p><img src="./img/02.png" alt="Image generated using for loops"></p>
+<ul>
+<li>Note: One for loop should be used to draw the horizontal portion of the image, and one for loop should be used to draw the vertical portion.</li>
+</ul>
+<h2>Challenge Exercise 2 (static drawing)</h2>
+<ul>
+<li>Create a new sketch and draw your chessboard on a 400x400 window using the rect() method instead of the line() method.  You will need a nested <strong>for</strong> loop to do this.</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Solutions">
+        <h1>Solutions</h1>
+<ul>
+<li><p>The solutions for this lab can be found <a href="archives/lab07_solutions.zip">here</a>.  </p>
+</li>
+<li><p>The file is in Zip format, so when you download it, you will need to unzip it.  If you don&#39;t have unzipping software installed on your computer, <strong>7Zip</strong> is a good choice.</p>
+</li>
+</ul>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Department of Computing and Mathematics, Waterford Institute of Technology (051-302482) .
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+
+    </footer>
+    <script>
+      
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+  $('.ui.embed').embed();
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+
+
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
