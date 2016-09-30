@@ -1,22 +1,26 @@
-//======================================================//
-//       Solution for Processing Lab07_Exercise02       //
-//                                                      //
-//   Author(s): Siobhan Drohan & Mairead Meagher, WIT   //
-//                                                      //
-//  Description:  Chess board using the line method     //
-//                regardless of the size of the window  //
-//                                                      //
-//  Instructions: Run the code by clicking the triangle //
-//                button above.                         //
-//======================================================//
+//==========================================================//
+//       Solution for Processing Lab07_Exercise02           //
+//                                                          //
+//   Author(s): Siobhan Drohan & Mairead Meagher, WIT       //
+//                                                          //
+//  Description:  Replicate image using for loop            //
+//                                                          //
+//  Instructions: Run the code by clicking the triangle     //
+//                button above.                             //
+//==========================================================//
 
-size(600,400);
-background(150);
-  
-for (int i=1; i < 9; i++)
-{
-   //horizontal lines
-   line(0,i*(height/8), width, i*(height/8));
-   //vertical lines
-   line(i*(width/8),0,i*(width/8),height);
+size(600, 300);
+background(100);
+noStroke();
+ 
+int yCoordinate = 60;
+//The for loop will run four times
+for(int i = 0; i < 4; i++) {
+  // Draw horizontal white bars 
+  fill(255);
+  rect(50, yCoordinate, 500, 10);
+  // Draw horizontal red bars 
+  fill(255,0,0);
+  rect(120, yCoordinate+10, 430, 10);
+  yCoordinate+=20;
 }

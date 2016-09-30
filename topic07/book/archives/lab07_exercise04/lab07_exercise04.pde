@@ -1,5 +1,5 @@
 //==========================================================//
-//       Solution for Processing Lab07_Challenge_Exercise01 //
+//       Solution for Processing Lab07_Exercise04           //
 //                                                          //
 //   Author(s): Siobhan Drohan & Mairead Meagher, WIT       //
 //                                                          //
@@ -14,6 +14,7 @@ background(100);
 noStroke();
  
 int yCoordinate = 60;
+//The for loop will run four times
 for(int i = 0; i < 4; i++) {
   // Draw horizontal white bars 
   fill(255);
@@ -25,6 +26,7 @@ for(int i = 0; i < 4; i++) {
 }
 
 int xCoordinate = 60;
+//The for loop will run four times
 for(int i = 0; i < 4; i++) {
   // Draw vertical white bars 
   fill(255);
