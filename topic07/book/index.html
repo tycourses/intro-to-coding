@@ -98,6 +98,10 @@ h3
       Static Drawings
     </a>
     
+    <a class="item" data-tab="Animated Drawings">
+      Animated Drawings
+    </a>
+    
     <a class="item" data-tab="Solutions">
       Solutions
     </a>
@@ -110,6 +114,54 @@ h3
 
 <div class="ui segment pushable">
   <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic07/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08/book/index.html">
+          Lab-08
+        </a>
+      
     
   </div>
   <div class="pusher">
@@ -259,6 +311,91 @@ for(int i = 0; i &lt; 4; i++) {
   rect(xCoordinate+10,130, 10, 120);
   xCoordinate+=20;
 }</code></pre>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Animated Drawings">
+        <h1>Exercises</h1>
+<ul>
+<li><p>In this exercise, we will tie together a lot of the concepts we have learned into one animated drawing.</p>
+</li>
+<li><p>We are going to create a &quot;blackboard&quot; and use a &quot;duster&quot; to rub off the contents of the blackboard:</p>
+<ul>
+<li>the contents we will rub off will be similar to the series of rectangles you drew in the previous step.</li>
+<li>the duster will be a circle that will follow the mouse pointer around.</li>
+</ul>
+</li>
+</ul>
+<h2>Exercise 5 (animated drawing)</h2>
+<ul>
+<li><p>Create a new sketch.</p>
+</li>
+<li><p>Using the code below, produce this drawing:</p>
+</li>
+</ul>
+<p><img src="./img/05.png" alt="Image generated using a for loop"></p>
+<pre><code class="lang-java">  void setup() {
+    size(500,400);
+    background(0);
+
+    //set up the blackboard with rectangles to &quot;rub off&quot;
+    int yCoordinate = 20;
+    for(int i = 0; i &lt; 15; i++) 
+    {
+        // Draw horizontal white bars 
+        fill(255);
+        rect(50, yCoordinate, 350, 10);
+        // Draw horizontal red bars 
+        fill(255,0,0);
+        rect(120, yCoordinate+20, 250 , 10);
+        yCoordinate+=40;
+     }
+
+     //setting up the colour for the &quot;duster&quot;; we will draw it later
+     fill(0,0,0);
+  }</code></pre>
+<ul>
+<li><p>Can you see from the code how the image is drawn?</p>
+</li>
+<li><p>The next step is to add the <strong>draw</strong> method.  This will draw our duster (a black circle) that will follow the mouse pointer.  As the background is black, the circle will appear to &quot;rub out&quot; the white and red rectangles.</p>
+</li>
+</ul>
+<p>Add this code to your sketch:</p>
+<pre><code class="lang-java">  void draw() {
+
+     //this is my &quot;duster&quot;
+     ellipse(mouseX, mouseY, 50, 50);
+  }</code></pre>
+<p>Run the code...does your &quot;duster&quot; rub out the white and red rectangles?</p>
+<p>If so, how about adding something to the animation when we press the mouse button?  Maybe we could clear the background and re-draw the white and red rectangles?</p>
+<p>To do this, change your draw() method so that it looks like this:</p>
+<pre><code class="lang-java">  void draw() {
+
+    if (mousePressed) {
+       //redraw the background when the mouse is pressed
+       background(0);
+       //setup the blackborad with more contents
+       int yCoordinate = 20;
+       for(int i = 0; i &lt; 15; i++) 
+       {
+          // Draw horizontal white bars 
+          fill(255);
+          rect(50, yCoordinate, 350, 10);
+          // Draw horizontal red bars 
+          fill(255,0,0);
+          rect(120, yCoordinate+20, 250 , 10);
+          yCoordinate+=40;
+       }
+       //setting up the colour for the &quot;duster&quot;
+       fill(0,0,0);
+    }
+
+    //this is my &quot;duster&quot;
+    ellipse(mouseX, mouseY, 50, 50);
+  }</code></pre>
+<p>Notice that, in our draw() method we just repeated the &quot;setting up the background&quot; code that we wrote in the setup() method.  </p>
+<p>Run your code...does the background repaint itself when you click the mouse button?</p>
+<p>Save your work...well done!</p>
 
       </div>
      
