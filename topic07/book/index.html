@@ -85,7 +85,7 @@ h3
   <header class="header item">
     <i id="toc" class="sitemap icon"></i>
     <a href="../index.html">
-       Iteration
+       Assignment
     </a>
   </header>
   <div class="right tab-menu menu">
@@ -94,16 +94,8 @@ h3
       Lab-07
     </a>
     
-    <a class="item" data-tab="Static Drawings">
-      Static Drawings
-    </a>
-    
-    <a class="item" data-tab="Animated Drawings">
-      Animated Drawings
-    </a>
-    
-    <a class="item" data-tab="Solutions">
-      Solutions
+    <a class="item" data-tab="Assignment">
+      Assignment
     </a>
     
     <a class="item" href="../../index.html">
@@ -157,255 +149,31 @@ h3
         </a>
       
     
-      
-        <a class="item" href="../../topic08/book/index.html">
-          Lab-08
-        </a>
-      
-    
   </div>
   <div class="pusher">
     <div class="ui basic segment">
       <br>
       
       <div  class="ui tab segment lab" data-tab="Lab-07">
-        <h1>Objectives</h1>
-<p>On completion of this lab you should:</p>
+        <h1>Assignment</h1>
 <ul>
-<li>understand how to code static drawings using for loops.</li>
+<li>This is the assignment for the coding course. </li>
+<li>You are asked to write the code for a working animation. </li>
 </ul>
 
       </div>
      
-      <div  class="ui tab segment lab" data-tab="Static Drawings">
-        <h1>Exercises</h1>
+      <div  class="ui tab segment lab" data-tab="Assignment">
+        <h1>Assignment Brief</h1>
+<p>You are asked to write code to produce a working animation of your choice. </p>
+<p>The aim of the assignment is for you to demonstrate your understanding of the code seen so far, so you are asked to include the following:</p>
 <ul>
-<li>In these exercises, we will build start building an image piece by piece.  You can use the same project for all these exercises.</li>
-</ul>
-<h2>Exercise 1 (static drawing)</h2>
-<ul>
-<li>Create a new sketch.</li>
-<li>Using the code below, produce this drawing:</li>
-</ul>
-<p><img src="./img/01.png" alt="Image generated using a for loop"></p>
-<pre><code class="lang-java">size(600, 300);
-background(100);
-noStroke();
-
-int yCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw horizontal white bars 
-  fill(255);
-  rect(50, yCoordinate, 500, 10);
-  yCoordinate+=20;
-}</code></pre>
-<ul>
-<li>Can you see from the code how the image is drawn?</li>
-</ul>
-<h2>Exercise 2 (static drawing)</h2>
-<ul>
-<li><p>In this exercise, we are going to update the sketch we wrote in Exercise 1.</p>
-</li>
-<li><p>Can you figure out the extra lines of code you need to add to produce this drawing:</p>
-</li>
-</ul>
-<p><img src="./img/02.png" alt="Image generated using a for loop"></p>
-<ul>
-<li><p>Note that you are only adding in the red rectanges.</p>
-</li>
-<li><p>If you need some assistance, the code is here:</p>
-</li>
-</ul>
-<pre><code class="lang-java">size(600, 300);
-background(100);
-noStroke();
-
-int yCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw horizontal white bars 
-  fill(255);
-  rect(50, yCoordinate, 500, 10);
-  // Draw horizontal red bars 
-  fill(255,0,0);
-  rect(120, yCoordinate+10, 430, 10);
-  yCoordinate+=20;
-}</code></pre>
-<h2>Exercise 3 (static drawing)</h2>
-<ul>
-<li><p>In this exercise, we are going to update the sketch we wrote in Exercise 2.</p>
-</li>
-<li><p>Can you figure out the extra lines of code you need to add to produce this drawing:</p>
-</li>
-</ul>
-<p><img src="./img/03.png" alt="Image generated using a for loop"></p>
-<ul>
-<li><p>Note that you are adding in the vertical white rectanges.  Hint: you need a second for loop to do this.</p>
-</li>
-<li><p>If you need some assistance, the code is here:</p>
-</li>
-</ul>
-<pre><code class="lang-java">size(600, 300);
-background(100);
-noStroke();
-
-int yCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw horizontal white bars 
-  fill(255);
-  rect(50, yCoordinate, 500, 10);
-  // Draw horizontal red bars 
-  fill(255,0,0);
-  rect(120, yCoordinate+10, 430, 10);
-  yCoordinate+=20;
-}
-
-int xCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw vertical white bars 
-  fill(255);
-  rect(xCoordinate, 50, 10, 200);
-  xCoordinate+=20;
-}</code></pre>
-<h2>Exercise 4 (static drawing)</h2>
-<ul>
-<li><p>In this exercise, we are going to update the sketch we wrote in Exercise 3.</p>
-</li>
-<li><p>Can you figure out the extra lines of code you need to add to produce this drawing:</p>
-</li>
-</ul>
-<p><img src="./img/04.png" alt="Image generated using a for loop"></p>
-<ul>
-<li><p>Note that you are adding in the vertical green rectanges.  Hint: the code will go inside the second for loop.</p>
-</li>
-<li><p>If you need some assistance, the code is here:</p>
-</li>
-</ul>
-<pre><code class="lang-java">size(600, 300);
-background(100);
-noStroke();
-
-int yCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw horizontal white bars 
-  fill(255);
-  rect(50, yCoordinate, 500, 10);
-  // Draw horizontal red bars 
-  fill(255,0,0);
-  rect(120, yCoordinate+10, 430, 10);
-  yCoordinate+=20;
-}
-
-int xCoordinate = 60;
-//The for loop will run four times
-for(int i = 0; i &lt; 4; i++) {
-  // Draw vertical white bars 
-  fill(255);
-  rect(xCoordinate, 50, 10, 200);
-  // Draw vertical green bars 
-  fill(0,255,0);
-  rect(xCoordinate+10,130, 10, 120);
-  xCoordinate+=20;
-}</code></pre>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Animated Drawings">
-        <h1>Exercises</h1>
-<ul>
-<li><p>In this exercise, we will tie together a lot of the concepts we have learned into one animated drawing.</p>
-</li>
-<li><p>We are going to create a &quot;blackboard&quot; and use a &quot;duster&quot; to rub off the contents of the blackboard:</p>
-<ul>
-<li>the contents we will rub off will be similar to the series of rectangles you drew in the previous step.</li>
-<li>the duster will be a circle that will follow the mouse pointer around.</li>
-</ul>
-</li>
-</ul>
-<h2>Exercise 5 (animated drawing)</h2>
-<ul>
-<li><p>Create a new sketch.</p>
-</li>
-<li><p>Using the code below, produce this drawing:</p>
-</li>
-</ul>
-<p><img src="./img/05.png" alt="Image generated using a for loop"></p>
-<pre><code class="lang-java">  void setup() {
-    size(500,400);
-    background(0);
-
-    //set up the blackboard with rectangles to &quot;rub off&quot;
-    int yCoordinate = 20;
-    for(int i = 0; i &lt; 15; i++) 
-    {
-        // Draw horizontal white bars 
-        fill(255);
-        rect(50, yCoordinate, 350, 10);
-        // Draw horizontal red bars 
-        fill(255,0,0);
-        rect(120, yCoordinate+20, 250 , 10);
-        yCoordinate+=40;
-     }
-
-     //setting up the colour for the &quot;duster&quot;; we will draw it later
-     fill(0,0,0);
-  }</code></pre>
-<ul>
-<li><p>Can you see from the code how the image is drawn?</p>
-</li>
-<li><p>The next step is to add the <strong>draw</strong> method.  This will draw our duster (a black circle) that will follow the mouse pointer.  As the background is black, the circle will appear to &quot;rub out&quot; the white and red rectangles.</p>
-</li>
-</ul>
-<p>Add this code to your sketch:</p>
-<pre><code class="lang-java">  void draw() {
-
-     //this is my &quot;duster&quot;
-     ellipse(mouseX, mouseY, 50, 50);
-  }</code></pre>
-<p>Run the code...does your &quot;duster&quot; rub out the white and red rectangles?</p>
-<p>If so, how about adding something to the animation when we press the mouse button?  Maybe we could clear the background and re-draw the white and red rectangles?</p>
-<p>To do this, change your draw() method so that it looks like this:</p>
-<pre><code class="lang-java">  void draw() {
-
-    if (mousePressed) {
-       //redraw the background when the mouse is pressed
-       background(0);
-       //setup the blackborad with more contents
-       int yCoordinate = 20;
-       for(int i = 0; i &lt; 15; i++) 
-       {
-          // Draw horizontal white bars 
-          fill(255);
-          rect(50, yCoordinate, 350, 10);
-          // Draw horizontal red bars 
-          fill(255,0,0);
-          rect(120, yCoordinate+20, 250 , 10);
-          yCoordinate+=40;
-       }
-       //setting up the colour for the &quot;duster&quot;
-       fill(0,0,0);
-    }
-
-    //this is my &quot;duster&quot;
-    ellipse(mouseX, mouseY, 50, 50);
-  }</code></pre>
-<p>Notice that, in our draw() method we just repeated the &quot;setting up the background&quot; code that we wrote in the setup() method.  </p>
-<p>Run your code...does the background repaint itself when you click the mouse button?</p>
-<p>Save your work...well done!</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Solutions">
-        <h1>Solutions</h1>
-<ul>
-<li><p>The solutions for this lab can be found <a href="archives/lab07_solutions.zip">here</a>.  </p>
-</li>
-<li><p>The file is in Zip format, so when you download it, you will need to unzip it.  If you don&#39;t have unzipping software installed on your computer, <strong>7Zip</strong> is a good choice.</p>
-</li>
+<li>shapes e.g. line, rect, ellipse, etc                              (20 marks)</li>
+<li>colour e.g. Grayscale and RGB schemes                              (5 marks)</li>
+<li>stroke and fill of shapes                                          (5 marks)</li>
+<li>key or mouse event handling                                      (20 marks)</li>
+<li>if statement                                                      (20 marks)</li>
+<li>animation i.e. using the <strong>draw()</strong> and <strong>setup()</strong> methods.    (30 marks)</li>
 </ul>
 
       </div>
